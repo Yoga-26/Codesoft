@@ -4,12 +4,12 @@ public class number_game{
         Random random = new Random();
         Scanner scanner = new Scanner (System.in);
         int attempts=0,guess_num;
-        System.out.println("Let's start the game!!!");
+        System.out.println("Let's start the game!!!\nYou have 10 chances");
         int choose = 1;
         while (choose!=0){
             int num = random.nextInt(0,100);
             attempts=0;
-            while(attempts>=0){
+            while(attempts<10){
                 System.out.println("Guess the number between 1 to 100");
                 guess_num=scanner.nextInt();
                 if (num==guess_num) {
@@ -20,7 +20,7 @@ public class number_game{
                 else {
                     if (num>guess_num) System.out.println("The number is too low");
                     else System.out.println("The number is too high");
-                    //System.out.printf("Your guess is wrong \nYou have %d chances left\n",5-attempts);
+                    System.out.printf("\nYou have %d chances left\n",9-attempts);
                     attempts++;
                 }
             }
